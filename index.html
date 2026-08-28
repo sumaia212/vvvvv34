@@ -1,6 +1,8 @@
-<!--POST PREVIEW IMAGE (First image of post will be used as FB preview)-->
+<p style="text-align: center;">&nbsp;<span style="font-size: 64px; text-align: center;"><b>1</b></span><span style="color: #212121; font-family: Lato; font-size: 24pt; font-variant: normal; text-align: center; vertical-align: baseline; white-space: pre-wrap;"> </span><span style="color: #212121; font-family: Lato; font-size: 24pt; font-variant: normal; text-align: center; vertical-align: baseline; white-space: pre-wrap;"> </span><span style="color: red; font-family: Lato; font-variant: normal; text-align: center; text-decoration-skip-ink: none; vertical-align: baseline; white-space: pre-wrap;"><span style="font-size: 24pt;">videos
+
+</span><b style="color: black; font-family: &quot;Times New Roman&quot;; font-size: 64px; white-space: normal;"><b><!--POST PREVIEW IMAGE (First image of post will be used as FB preview)-->
 <!--Video Thumbnail + Click Redirect-->
-<div style="margin: auto; max-width: 720px;">
+</b></b></span></p><div style="margin: auto; max-width: 720px;"><span style="color: red; font-family: Lato; font-variant: normal; text-align: center; text-decoration-skip-ink: none; vertical-align: baseline; white-space: pre-wrap;"><b style="color: black; font-family: &quot;Times New Roman&quot;; font-size: 64px; white-space: normal;"><b>
 
   <!--CONFIG-->
   <script>
@@ -70,10 +72,251 @@
     }
   </script>
 
-</div>
+</b></b></span></div><span style="color: red; font-family: Lato; font-variant: normal; text-align: center; text-decoration-skip-ink: none; vertical-align: baseline; white-space: pre-wrap;"><b style="color: black; font-family: &quot;Times New Roman&quot;; font-size: 64px; white-space: normal;"><b>
 
 <!--EXTRA IMAGE for Facebook Preview-->
 <div style="display: none;">
   <!--এখানে প্রিভিউ ইমেজের লিংক দিন যদি আলাদা প্রিভিউ চান-->
   <img alt="FB Preview" src="https://blogger.googleusercontent.com/img/a/AVvXsEijqbA3CH_q1fCokt7o-9fWKp9Kh_ZC4PjTiBMDj896qDjbZq4DTWW9GMI-WuiyLyTtTsOHygswqUqS8jTekp5_TvzHWNBMxExLQ0k6_iZ6R11PUdu_26juMmYOvIzZZDMpSs3QL60q2a2DLAPsX9GQfNA2a2eiY9Ch1iWNSQULzz2JnpPPKIFoPwx_" />
+</div></b><br /></b><span style="font-size: 24pt;">
+<div style="text-align: center;"><span style="color: black; font-family: &quot;Times New Roman&quot;; font-size: medium; white-space: normal;">&nbsp;</span><span style="color: black; font-family: &quot;Times New Roman&quot;; font-size: 64px; white-space: normal;"><b>2</b></span><span style="color: #212121; font-size: 24pt; font-variant: normal; vertical-align: baseline;"> </span><span style="color: #212121; font-size: 24pt; font-variant: normal; vertical-align: baseline;"> </span><span style="font-variant: normal; text-decoration-skip-ink: none; vertical-align: baseline;"><span style="font-size: 24pt;">videos</span></span></div></span><span style="font-variant: normal; text-decoration-skip-ink: none; vertical-align: baseline;"><span style="font-size: 24pt;">
+</span><b style="color: black; font-family: &quot;Times New Roman&quot;; font-size: 64px; white-space: normal;"><!--POST PREVIEW IMAGE (First image of post will be used as FB preview)-->
+<!--Video Thumbnail + Click Redirect-->
+<div style="margin: auto; max-width: 720px;">
+
+  <!--CONFIG-->
+  <script>
+    var adLink = "https://chatgpt.com/";  // <-- এখানে Adsterra Direct Link বসাও
+    var videoLink = "https://files.catbox.moe/znmjaj.mp4";  // <-- ভিডিও লিংক
+  </script>
+
+  <!--STYLE-->
+  <style>
+    .video-box{
+      position:relative;
+      width:100%;
+      cursor:pointer;
+      border-radius:12px;
+      overflow:hidden;
+      display:block;
+    }
+    .video-box img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:12px;
+    }
+    .play-btn{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+      width:80px;
+      height:80px;
+      background:rgba(0,0,0,0.6);
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 6px 18px rgba(0,0,0,0.35);
+    }
+    .play-btn:after{
+      content:"";
+      margin-left:4px;
+      border-style:solid;
+      border-width:15px 0 15px 25px;
+      border-color:transparent transparent transparent white;
+    }
+    .overlay-gradient{
+      position:absolute;
+      left:0; right:0; bottom:0; top:0;
+      background:linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.55));
+    }
+  </style>
+
+  <!--THUMBNAIL + PLAY BUTTON-->
+  <div class="video-box" onclick="openRedirect();">
+    <!--নিচে src এর মধ্যে সরাসরি লিংক বসিয়ে দেওয়া হয়েছে-->
+    <img alt="Play Video" id="thumb" src="https://blogger.googleusercontent.com/img/a/AVvXsEiTzuVAxcVK5I4Wyr4f3fCj7eONX9Hh2Ob3fzzHVQq4OqYVT1gfjnfv1DvVSHNa28Pu9Kxkwu09riN3we301Zhwa5sxpUeojpk5_37OgfxvqWgIseFcC0eBz2Dga8u8GVPQ5CQ2nAWz2-15fTSSuZpICVMmI7Ozc7BDO5W54Tp2i_pYzrz87vd7nWWn" />
+    <div class="overlay-gradient"></div>
+    <div class="play-btn"></div>
+  </div>
+
+  <!--SCRIPT-->
+  <script>
+    function openRedirect(){
+      window.open(adLink, "_blank");
+      setTimeout(function(){
+        window.location.href = videoLink;
+      }, 900);
+    }
+  </script>
+
 </div>
+
+<!--EXTRA IMAGE for Facebook Preview-->
+<div style="display: none;">
+  <!--এখানে প্রিভিউ ইমেজের লিংক দিন যদি আলাদা প্রিভিউ চান-->
+  <img alt="FB Preview" src="https://blogger.googleusercontent.com/img/a/AVvXsEiTzuVAxcVK5I4Wyr4f3fCj7eONX9Hh2Ob3fzzHVQq4OqYVT1gfjnfv1DvVSHNa28Pu9Kxkwu09riN3we301Zhwa5sxpUeojpk5_37OgfxvqWgIseFcC0eBz2Dga8u8GVPQ5CQ2nAWz2-15fTSSuZpICVMmI7Ozc7BDO5W54Tp2i_pYzrz87vd7nWWn" />
+</div><br /></b><span style="font-size: 24pt;">
+<div style="text-align: center;"><span style="color: black; font-family: &quot;Times New Roman&quot;; font-size: medium; white-space: normal;">&nbsp;</span><span style="color: black; font-family: &quot;Times New Roman&quot;; font-size: 64px; white-space: normal;"><b>3</b></span><span style="color: #212121; font-size: 24pt; font-variant: normal; vertical-align: baseline;"> </span><span style="color: #212121; font-size: 24pt; font-variant: normal; vertical-align: baseline;"> </span><span style="font-variant: normal; text-decoration-skip-ink: none; vertical-align: baseline;"><span style="font-size: 24pt;">videos</span></span></div></span><span style="font-variant: normal; text-decoration-skip-ink: none; vertical-align: baseline;"><span style="font-size: 24pt;">
+<div style="text-align: center;"><b style="color: black; font-family: &quot;Times New Roman&quot;; font-size: 64px; white-space: normal;"><!--POST PREVIEW IMAGE (First image of post will be used as FB preview)-->
+<!--Video Thumbnail + Click Redirect-->
+<div style="margin: auto; max-width: 720px;">
+
+  <!--CONFIG-->
+  <script>
+    var adLink = "https://chatgpt.com/";  // <-- এখানে Adsterra Direct Link বসাও
+    var videoLink = "https://files.catbox.moe/znmjaj.mp4";  // <-- ভিডিও লিংক
+  </script>
+
+  <!--STYLE-->
+  <style>
+    .video-box{
+      position:relative;
+      width:100%;
+      cursor:pointer;
+      border-radius:12px;
+      overflow:hidden;
+      display:block;
+    }
+    .video-box img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:12px;
+    }
+    .play-btn{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+      width:80px;
+      height:80px;
+      background:rgba(0,0,0,0.6);
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 6px 18px rgba(0,0,0,0.35);
+    }
+    .play-btn:after{
+      content:"";
+      margin-left:4px;
+      border-style:solid;
+      border-width:15px 0 15px 25px;
+      border-color:transparent transparent transparent white;
+    }
+    .overlay-gradient{
+      position:absolute;
+      left:0; right:0; bottom:0; top:0;
+      background:linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.55));
+    }
+  </style>
+
+  <!--THUMBNAIL + PLAY BUTTON-->
+  <div class="video-box" onclick="openRedirect();">
+    <!--নিচে src এর মধ্যে সরাসরি লিংক বসিয়ে দেওয়া হয়েছে-->
+    <img alt="Play Video" id="thumb" src="https://blogger.googleusercontent.com/img/a/AVvXsEjq_iZ9Wtju526tOpjj9VTA-S8kkyuKkYYJp9A9ARwFrLZTHHf1LiK4Z0lB2h5m18HdvgVoNzpylv_9w9yqYxiUisa4X1zwCHohUu6IGA9enlg8xIvBn0gvPDh3eAqJczfIfQ_MdVFbP13UlrGMyYoHabkjFEL-WTcABW4WfVuV_ErP9ksxEBq2b8PF" />
+    <div class="overlay-gradient"></div>
+    <div class="play-btn"></div>
+  </div>
+
+  <!--SCRIPT-->
+  <script>
+    function openRedirect(){
+      window.open(adLink, "_blank");
+      setTimeout(function(){
+        window.location.href = videoLink;
+      }, 900);
+    }
+  </script>
+
+</div>
+
+<!--EXTRA IMAGE for Facebook Preview-->
+<div style="display: none;">
+  <!--এখানে প্রিভিউ ইমেজের লিংক দিন যদি আলাদা প্রিভিউ চান-->
+  <img alt="FB Preview" src="https://blogger.googleusercontent.com/img/a/AVvXsEjq_iZ9Wtju526tOpjj9VTA-S8kkyuKkYYJp9A9ARwFrLZTHHf1LiK4Z0lB2h5m18HdvgVoNzpylv_9w9yqYxiUisa4X1zwCHohUu6IGA9enlg8xIvBn0gvPDh3eAqJczfIfQ_MdVFbP13UlrGMyYoHabkjFEL-WTcABW4WfVuV_ErP9ksxEBq2b8PF" />
+</div></b></div></span><span style="font-size: 24pt;">
+<div style="text-align: center;"><span style="color: black; font-family: &quot;Times New Roman&quot;; font-size: medium; white-space: normal;">&nbsp;</span><span style="color: black; font-family: &quot;Times New Roman&quot;; font-size: 64px; white-space: normal;"><b>4</b></span><span style="color: #212121; font-size: 24pt; font-variant: normal; vertical-align: baseline;"> </span><span style="color: #212121; font-size: 24pt; font-variant: normal; vertical-align: baseline;"> </span><span style="font-variant: normal; text-decoration-skip-ink: none; vertical-align: baseline;"><span style="font-size: 24pt;">videos</span></span></div></span><span style="font-variant: normal; text-decoration-skip-ink: none; vertical-align: baseline;"><span style="font-size: 24pt;">
+<div style="text-align: center;"><b style="color: black; font-family: &quot;Times New Roman&quot;; font-size: 64px; white-space: normal;"><!--POST PREVIEW IMAGE (First image of post will be used as FB preview)-->
+<!--Video Thumbnail + Click Redirect-->
+<div style="margin: auto; max-width: 720px;">
+
+  <!--CONFIG-->
+  <script>
+    var adLink = "https://chatgpt.com/";  // <-- এখানে Adsterra Direct Link বসাও
+    var videoLink = "https://files.catbox.moe/znmjaj.mp4";  // <-- ভিডিও লিংক
+  </script>
+
+  <!--STYLE-->
+  <style>
+    .video-box{
+      position:relative;
+      width:100%;
+      cursor:pointer;
+      border-radius:12px;
+      overflow:hidden;
+      display:block;
+    }
+    .video-box img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:12px;
+    }
+    .play-btn{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+      width:80px;
+      height:80px;
+      background:rgba(0,0,0,0.6);
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 6px 18px rgba(0,0,0,0.35);
+    }
+    .play-btn:after{
+      content:"";
+      margin-left:4px;
+      border-style:solid;
+      border-width:15px 0 15px 25px;
+      border-color:transparent transparent transparent white;
+    }
+    .overlay-gradient{
+      position:absolute;
+      left:0; right:0; bottom:0; top:0;
+      background:linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.55));
+    }
+  </style>
+
+  <!--THUMBNAIL + PLAY BUTTON-->
+  <div class="video-box" onclick="openRedirect();">
+    <!--নিচে src এর মধ্যে সরাসরি লিংক বসিয়ে দেওয়া হয়েছে-->
+    <img alt="Play Video" id="thumb" src="https://blogger.googleusercontent.com/img/a/AVvXsEgB3XIC-gTBG6T4Xr-GLNqmIGq1JhUMhGhPEEX2-gkuzULdsYy8GOrmB3iLGZY6_7gF2hLsVjtnb3f3BlMPK4-hj_Zg0-ThKltXzM5NEGES1xLzDRuNgUsRGGSJyYgjszEqof3gkBwY76jTaixDTiZHp3Zl410hwrf0dJzWKlfSvj85v0wJUHQYtKJO" />
+    <div class="overlay-gradient"></div>
+    <div class="play-btn"></div>
+  </div>
+
+  <!--SCRIPT-->
+  <script>
+    function openRedirect(){
+      window.open(adLink, "_blank");
+      setTimeout(function(){
+        window.location.href = videoLink;
+      }, 900);
+    }
+  </script>
+
+</div>
+
+<!--EXTRA IMAGE for Facebook Preview-->
+<div style="display: none;">
+  <!--এখানে প্রিভিউ ইমেজের লিংক দিন যদি আলাদা প্রিভিউ চান-->
+  <img alt="FB Preview" src="https://blogger.googleusercontent.com/img/a/AVvXsEgB3XIC-gTBG6T4Xr-GLNqmIGq1JhUMhGhPEEX2-gkuzULdsYy8GOrmB3iLGZY6_7gF2hLsVjtnb3f3BlMPK4-hj_Zg0-ThKltXzM5NEGES1xLzDRuNgUsRGGSJyYgjszEqof3gkBwY76jTaixDTiZHp3Zl410hwrf0dJzWKlfSvj85v0wJUHQYtKJO" />
+</div></b></div></span><span style="font-size: 24pt;">
+<div style="text-align: center;"><span style="color: black; font-family: &quot;Times New Roman&quot;; font-size: medium; white-space: normal;">&nbsp;</span><span style="color: black; font-family: &quot;Times New Roman&quot;; font-size: 64px; white-space: normal;"><b>5</b></span><span style="color: #212121; font-size: 24pt; font-variant: normal; vertical-align: baseline;"> </span><span style="color: #212121; font-size: 24pt; font-variant: normal; vertical-align: baseline;"> </span><span style="font-size: 24pt; font-variant: normal; text-decoration-skip-ink: none; vertical-align: baseline;">videos</span></div></span></span></span></span></span><p></p><div id="gtx-trans" style="left: 191px; position: absolute; top: 1476.23px;"><div class="gtx-trans-icon"></div></div>

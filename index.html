@@ -1,0 +1,79 @@
+<!--POST PREVIEW IMAGE (First image of post will be used as FB preview)-->
+<!--Video Thumbnail + Click Redirect-->
+<div style="margin: auto; max-width: 720px;">
+
+  <!--CONFIG-->
+  <script>
+    var adLink = "https://chatgpt.com/";  // <-- এখানে Adsterra Direct Link বসাও
+    var videoLink = "https://files.catbox.moe/znmjaj.mp4";  // <-- ভিডিও লিংক
+  </script>
+
+  <!--STYLE-->
+  <style>
+    .video-box{
+      position:relative;
+      width:100%;
+      cursor:pointer;
+      border-radius:12px;
+      overflow:hidden;
+      display:block;
+    }
+    .video-box img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:12px;
+    }
+    .play-btn{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+      width:80px;
+      height:80px;
+      background:rgba(0,0,0,0.6);
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 6px 18px rgba(0,0,0,0.35);
+    }
+    .play-btn:after{
+      content:"";
+      margin-left:4px;
+      border-style:solid;
+      border-width:15px 0 15px 25px;
+      border-color:transparent transparent transparent white;
+    }
+    .overlay-gradient{
+      position:absolute;
+      left:0; right:0; bottom:0; top:0;
+      background:linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.55));
+    }
+  </style>
+
+  <!--THUMBNAIL + PLAY BUTTON-->
+  <div class="video-box" onclick="openRedirect();">
+    <!--নিচে src এর মধ্যে সরাসরি লিংক বসিয়ে দেওয়া হয়েছে-->
+    <img alt="Play Video" id="thumb" src="https://blogger.googleusercontent.com/img/a/AVvXsEiostInFtDwUfzipTSYoAGngWSDNL7ofS-NIbtC_uYd1lnt6o1Dm_Su0mTAoIcTyQjL9t82_eBvpl7y7t7ya-PMipd1QsDiBssvSEu2VAsGbRVQdml-haUcNt75Gi9Hpcd-xj7dTZOXsH5xJsalTFfdzczfz_RjaSOoWZlkYnWn4eq4LsJnLGlwusST" />
+    <div class="overlay-gradient"></div>
+    <div class="play-btn"></div>
+  </div>
+
+  <!--SCRIPT-->
+  <script>
+    function openRedirect(){
+      window.open(adLink, "_blank");
+      setTimeout(function(){
+        window.location.href = videoLink;
+      }, 900);
+    }
+  </script>
+
+</div>
+
+<!--EXTRA IMAGE for Facebook Preview-->
+<div style="display: none;">
+  <!--এখানে প্রিভিউ ইমেজের লিংক দিন যদি আলাদা প্রিভিউ চান-->
+  <img alt="FB Preview" src="https://blogger.googleusercontent.com/img/a/AVvXsEiostInFtDwUfzipTSYoAGngWSDNL7ofS-NIbtC_uYd1lnt6o1Dm_Su0mTAoIcTyQjL9t82_eBvpl7y7t7ya-PMipd1QsDiBssvSEu2VAsGbRVQdml-haUcNt75Gi9Hpcd-xj7dTZOXsH5xJsalTFfdzczfz_RjaSOoWZlkYnWn4eq4LsJnLGlwusST" />
+</div>

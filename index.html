@@ -2,343 +2,78 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CareerPath — Find Your Next Great Opportunity</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>US Job Search — Find Your Next Job</title>
 <style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  :root{
-    --blue:#1264e8;
-    --blue2:#0d55cc;
-    --dark:#10284d;
-    --text:#172033;
-    --muted:#667085;
-    --light:#f7faff;
-    --line:#e5eaf2;
-    --green:#19a66a;
-  }
-  body{
-    font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-    color:var(--text);background:#fff;line-height:1.5;
-  }
-  a{text-decoration:none;color:inherit}
-  .container{width:min(1120px,92%);margin:auto}
-
-  /* Header */
-  header{height:76px;border-bottom:1px solid #edf0f5;background:#fff;position:sticky;top:0;z-index:50}
-  .nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:25px}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:#26364e}
-  .brand-mark{
-    width:42px;height:42px;border-radius:10px;background:var(--blue);
-    display:grid;place-items:center;color:#fff;font-weight:900;font-size:21px;
-    box-shadow:0 7px 18px rgba(18,100,232,.2)
-  }
-  .brand span small{display:block;font-size:10px;color:#8994a6;font-weight:600;letter-spacing:.2px;margin-top:-4px}
-  .menu{display:flex;align-items:center;gap:32px;margin-left:auto;margin-right:35px}
-  .menu a{font-size:13px;color:#475467;font-weight:600}
-  .menu a:hover{color:var(--blue)}
-  .nav-btn,.primary{
-    background:var(--blue);color:white;border:0;border-radius:6px;padding:12px 22px;
-    font-weight:700;font-size:13px;cursor:pointer;display:inline-block;
-    box-shadow:0 7px 18px rgba(18,100,232,.18)
-  }
-  .nav-btn:hover,.primary:hover{background:var(--blue2)}
-
-  /* Hero */
-  .hero{padding:58px 0 35px;background:linear-gradient(180deg,#fff,#f9fbff)}
-  .hero-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center}
-  .pill{display:inline-flex;background:#eaf3ff;color:var(--blue);font-size:11px;font-weight:800;padding:6px 12px;border-radius:20px;margin-bottom:17px}
-  h1{font-size:48px;line-height:1.08;letter-spacing:-1.8px;margin-bottom:18px}
-  h1 span{color:var(--blue)}
-  .hero p{font-size:15px;color:var(--muted);max-width:500px;margin-bottom:25px}
-  .hero-actions{display:flex;align-items:center;gap:18px}
-  .secondary{padding:11px 19px;border:1px solid #dfe5ee;border-radius:6px;color:#344054;font-size:13px;font-weight:700;background:white}
-  .secondary:hover{border-color:var(--blue);color:var(--blue)}
-  .mini-points{display:flex;gap:28px;margin-top:31px}
-  .mini-points div{font-size:11px;color:#475467;font-weight:700}
-  .mini-points b{display:block;font-size:10px;color:#98a2b3;font-weight:500;margin-top:2px}
-  .hero-photo{
-    min-height:340px;border-radius:9px;overflow:hidden;
-    background:
-      linear-gradient(90deg,rgba(255,255,255,.03),rgba(255,255,255,.03)),
-      url("https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1100&q=85") center/cover;
-    box-shadow:0 18px 45px rgba(16,40,77,.12);
-  }
-
-  /* Jobs */
-  .jobs{padding:22px 0 35px}
-  .section-kicker{text-align:center;color:var(--blue);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px}
-  .section-title{text-align:center;font-size:23px;line-height:1.2;margin:3px 0 24px}
-  .jobs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
-  .job{
-    border:1px solid var(--line);border-radius:8px;background:#fff;padding:18px;
-    box-shadow:0 5px 18px rgba(16,24,40,.035);transition:.2s;
-  }
-  .job:hover{transform:translateY(-3px);box-shadow:0 13px 28px rgba(16,24,40,.08)}
-  .job-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
-  .job-logo{
-    height:58px;min-width:92px;padding:6px 10px;border-radius:6px;background:#fafafa;
-    display:flex;align-items:center;justify-content:center;font-weight:900;font-size:23px;
-    letter-spacing:-1px;
-  }
-  .amazon{font-family:Georgia,serif;font-size:27px;color:#111}
-  .walmart{color:#08783d;font-size:18px}.walmart i{color:#f3b500;font-style:normal}
-  .ups{background:#4a280c;color:#ffcc3d;font-size:21px;border-radius:9px}
-  .kelly{color:#147b50;font-size:19px}
-  .delta{color:#d92c32;font-size:17px}
-  .fedex{font-size:20px;color:#4b2683}.fedex i{color:#ff6d00;font-style:normal}
-  .badge{background:#e9f8ef;color:#15945a;padding:4px 8px;border-radius:20px;font-size:9px;font-weight:800}
-  .job h3{font-size:15px;margin-bottom:9px}
-  .meta{font-size:11px;color:#7a8494;margin:7px 0;display:flex;gap:7px;align-items:center}
-  .meta b{color:#4d5a6d;font-weight:700}
-  .job .primary{width:100%;text-align:center;margin-top:13px;padding:10px;font-size:12px}
-
-  /* Blue feature strip */
-  .features{padding:5px 0 42px}
-  .feature-box{
-    background:var(--dark);border-radius:8px;color:white;padding:27px 30px;
-    box-shadow:0 14px 32px rgba(16,40,77,.16)
-  }
-  .feature-box .section-title{color:white;margin-bottom:24px}
-  .feature-grid{display:grid;grid-template-columns:repeat(4,1fr)}
-  .feature{padding:0 23px;text-align:center;border-right:1px solid rgba(255,255,255,.14)}
-  .feature:last-child{border:0}
-  .icon{width:43px;height:43px;border-radius:50%;background:#1e58aa;display:grid;place-items:center;margin:0 auto 10px;font-size:18px}
-  .feature h4{font-size:12px;margin-bottom:5px}
-  .feature p{font-size:10px;line-height:1.5;color:#aebbd0}
-
-  /* Stats */
-  .stats{padding:3px 0 38px}
-  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}
-  .stat{display:flex;align-items:center;gap:10px}
-  .stat-icon{color:var(--blue);font-size:23px}
-  .stat strong{display:block;color:var(--blue);font-size:16px;line-height:1.1}
-  .stat span{font-size:10px;color:#7b8798}
-
-  /* Contact */
-  .contact{padding:6px 0 45px}
-  .contact-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:42px;align-items:start}
-  .contact h2{text-align:center;font-size:22px;margin-bottom:4px}
-  .contact-sub{text-align:center;color:#8993a2;font-size:10px;margin-bottom:22px}
-  form{display:grid;grid-template-columns:1fr 1fr;gap:13px}
-  input,textarea{
-    width:100%;border:1px solid #e0e5ed;border-radius:5px;padding:11px 12px;
-    outline:none;font:inherit;font-size:11px;color:#344054;background:white
-  }
-  textarea{min-height:95px;resize:vertical;grid-column:1/-1}
-  input:focus,textarea:focus{border-color:#8bb5ff;box-shadow:0 0 0 3px #edf4ff}
-  form .primary{grid-column:1/-1;width:max-content;margin:auto}
-  .contact-card{
-    background:linear-gradient(135deg,#1768ed,#0750cb);color:white;border-radius:8px;padding:22px;
-    box-shadow:0 13px 30px rgba(18,100,232,.22)
-  }
-  .contact-card h3{font-size:15px;margin-bottom:15px}
-  .contact-line{display:flex;gap:11px;margin:12px 0;font-size:10px;line-height:1.45}
-  .contact-line b{display:block;font-size:11px}
-
-  /* Footer */
-  footer{background:#0e2548;color:#fff;padding:31px 0 15px}
-  .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1.2fr;gap:30px}
-  .footer-brand p{font-size:10px;color:#9eacc1;max-width:240px;margin-top:11px}
-  footer h4{font-size:11px;margin-bottom:10px}
-  footer a{display:block;color:#9eacc1;font-size:10px;margin:6px 0}
-  .newsletter{display:flex;margin-top:8px}
-  .newsletter input{border-radius:4px 0 0 4px;border:0;padding:9px}
-  .newsletter button{border:0;background:var(--blue);color:#fff;padding:0 13px;border-radius:0 4px 4px 0;font-weight:700}
-  .copyright{border-top:1px solid rgba(255,255,255,.1);margin-top:25px;padding-top:12px;color:#8797ad;font-size:9px;text-align:center}
-
-  @media(max-width:850px){
-    .menu{display:none}.hero-grid{grid-template-columns:1fr}.hero-photo{min-height:300px}
-    h1{font-size:40px}.jobs-grid{grid-template-columns:1fr 1fr}.feature-grid{grid-template-columns:1fr 1fr;gap:22px}
-    .feature:nth-child(2){border-right:0}.feature:nth-child(-n+2){padding-bottom:20px}
-    .stats-grid{grid-template-columns:1fr 1fr}.contact-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}
-  }
-  @media(max-width:560px){
-    header{height:65px}.brand-mark{width:36px;height:36px}.nav-btn{padding:9px 13px}
-    .hero{padding-top:38px}.hero-grid{gap:28px}h1{font-size:35px}
-    .mini-points{gap:14px;flex-wrap:wrap}.jobs-grid{grid-template-columns:1fr}
-    .feature-grid{grid-template-columns:1fr}.feature{border-right:0!important;border-bottom:1px solid rgba(255,255,255,.14);padding:15px 5px!important}
-    .feature:last-child{border-bottom:0}.stats-grid{grid-template-columns:1fr 1fr;gap:18px}
-    form{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.hero-actions{flex-wrap:wrap}
-  }
+:root{--blue:#1877f2;--blue2:#2f80ed;--ink:#101828;--muted:#667085;--line:#e6eaf0;--bg:#f7f9fc;--nav:#172033}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#fff}.wrap{width:min(1120px,calc(100% - 34px));margin:auto}
+.topbar{height:35px;background:#172033;color:#fff;font-size:9px;display:flex;align-items:center}.topbar .wrap{display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:7px;font-weight:700}.brandmark{width:13px;height:13px;border-radius:50%;background:#247cff;display:grid;place-items:center;font-size:8px;color:#fff;box-shadow:0 0 0 2px #20304a}.nav{display:flex;gap:23px;align-items:center;color:#b8c0d0}.nav a{color:inherit;text-decoration:none}.pill{background:#fff;color:#111;padding:4px 10px;border-radius:10px;font-weight:700;font-size:8px}
+.hero{background:#f6f8fb;padding:25px 0 28px}.hero h1{text-align:center;font-size:25px;margin:4px 0 8px;letter-spacing:-.7px}.hero p{text-align:center;color:#7a8494;font-size:11px;margin:0 0 22px}.search{background:#fff;border:1px solid #e4e8ef;border-radius:10px;padding:12px;box-shadow:0 7px 24px #1020400b;display:grid;grid-template-columns:1fr 1fr 150px;gap:9px}.field{border:1px solid #e4e8ef;border-radius:7px;padding:9px 11px;color:#98a2b3;font-size:10px}.search button{border:0;border-radius:7px;background:#1877f2;color:#fff;font-weight:700;font-size:10px}.chips{display:flex;gap:8px;justify-content:center;margin-top:13px;flex-wrap:wrap}.chips span{background:#fff;border:1px solid #e8ebf0;border-radius:15px;padding:5px 9px;color:#667085;font-size:8px}
+.section{padding:34px 0}.section.alt{background:#f8fafc}.eyebrow{text-align:center;color:#8791a3;font-size:8px;margin-bottom:5px}.section h2{text-align:center;font-size:19px;margin:0 0 7px;letter-spacing:-.4px}.section .sub{text-align:center;color:#7b8492;font-size:9px;margin:0 auto 19px}
+.grid6{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}.cat{background:#fff;border:1px solid #e8ecf2;border-radius:7px;padding:10px 7px;text-align:center;min-height:59px;box-shadow:0 2px 8px #15264b06}.ico{width:23px;height:23px;border-radius:7px;margin:0 auto 6px;display:grid;place-items:center;font-size:9px;font-weight:800;color:#fff}.cat b{display:block;font-size:8px}.cat small{display:block;color:#9aa3b2;font-size:7px;margin-top:2px}
+.jobgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.job{background:#fff;border:1px solid #e3e8ef;border-radius:8px;padding:12px;box-shadow:0 3px 12px #16284b08}.jobhead{display:flex;justify-content:space-between;align-items:start}.jico{width:25px;height:25px;border-radius:7px;background:#eaf2ff;color:#1877f2;display:grid;place-items:center;font-weight:800;font-size:9px}.new{font-size:7px;color:#15a46c;background:#ecfbf4;padding:3px 5px;border-radius:6px}.job h3{font-size:10px;margin:8px 0 3px}.job .co{font-size:8px;color:#7d8796}.meta{font-size:7px;color:#8a94a4;line-height:1.6;margin-top:7px}.salary{font-size:8px;color:#3f4b5d;margin:5px 0}.apply{display:block;background:#2f80ed;color:#fff;text-decoration:none;text-align:center;padding:7px 6px;border-radius:6px;font-size:8px;font-weight:800;margin-top:9px;letter-spacing:.1px}.job:nth-child(3n+1) .jico{background:#eaf2ff}.job:nth-child(3n+2) .jico{background:#eef7ff}.job:nth-child(3n) .jico{background:#eaf8f2;color:#14966a}
+.more{text-align:center;margin-top:15px}.more a{font-size:8px;color:#1877f2;text-decoration:none;font-weight:700;border:1px solid #dce5f2;padding:7px 12px;border-radius:7px}
+.paygrid{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}.pay{background:#fff;border:1px solid #e8edf3;border-radius:8px;padding:13px;text-align:center}.pay strong{font-size:13px}.pay b{display:block;font-size:9px;margin-top:4px}.pay span{display:block;font-size:7px;color:#8a94a3;margin-top:3px}
+.dark{background:linear-gradient(120deg,#0c254a,#091329 62%,#321b1e);color:#fff}.dark .section h2,.dark .sub{color:#fff}.featuregrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.feature{background:#ffffff12;border:1px solid #ffffff16;border-radius:8px;padding:14px}.feature .ico{margin:0 0 10px;background:#247cff}.feature b{font-size:9px}.feature p{font-size:7px;color:#c2cad8;line-height:1.5;margin:5px 0 0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.step{background:#fff;border:1px solid #e8edf3;border-radius:8px;padding:14px}.num{width:24px;height:24px;border-radius:50%;background:#eaf2ff;color:#1877f2;display:grid;place-items:center;font-size:9px;font-weight:800}.step b{display:block;font-size:9px;margin:8px 0 4px}.step p{font-size:7px;color:#7e8796;line-height:1.5;margin:0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);text-align:center;padding:28px 0}.stats strong{font-size:21px;color:#1877f2}.stats span{display:block;font-size:8px;color:#8b94a3;margin-top:2px}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.review{background:#fff;border:1px solid #e7ebf1;border-radius:8px;padding:13px}.person{display:flex;align-items:center;gap:7px;font-size:8px;font-weight:700}.avatar{width:23px;height:23px;border-radius:50%;background:#e9f1ff;color:#1877f2;display:grid;place-items:center}.stars{color:#f4ad1b;font-size:9px;margin:8px 0 5px}.review p{font-size:8px;color:#687384;line-height:1.5;margin:0}
+.faq{max-width:700px;margin:auto}.faq details{background:#fff;border:1px solid #e4e8ee;border-radius:7px;margin:6px 0;padding:9px 12px}.faq summary{font-size:8px;font-weight:700;cursor:pointer}.faq p{font-size:8px;color:#7c8695;line-height:1.5;margin:8px 0 0}
+.cta{background:linear-gradient(120deg,#0c2c5d,#091329 58%,#31191d);color:#fff;text-align:center;padding:40px 0}.cta h2{font-size:22px;margin:0 0 7px}.cta h2 span{color:#2f80ed}.cta p{font-size:9px;color:#c6cedb;margin:0 0 17px}.cta a{display:inline-block;text-decoration:none;background:#fff;color:#162238;font-size:8px;font-weight:800;padding:8px 13px;border-radius:14px;margin:0 3px}.cta a.alt{background:#ffffff12;color:#fff;border:1px solid #ffffff25}
+footer{background:#f8fafc;color:#8a93a2;font-size:7px;padding:22px 0;text-align:center}.footnav{display:flex;justify-content:center;gap:18px;margin-bottom:9px}.footnav a{color:#6d7788;text-decoration:none}
+@media(max-width:800px){.grid6{grid-template-columns:repeat(3,1fr)}.search{grid-template-columns:1fr}.jobgrid{grid-template-columns:1fr 1fr}.featuregrid{grid-template-columns:1fr 1fr}.paygrid{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:1fr 1fr;gap:18px}.reviews{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.nav{display:none}}
+@media(max-width:480px){.wrap{width:min(100% - 22px,1120px)}.grid6{grid-template-columns:repeat(2,1fr)}.jobgrid,.featuregrid{grid-template-columns:1fr}.hero h1{font-size:22px}}
 </style>
 </head>
 <body>
+<header class="topbar"><div class="wrap"><div class="brand"><span class="brandmark">✓</span> US Job Search</div><nav class="nav"><a href="#jobs">Jobs</a><a href="#categories">Categories</a><a href="#salary">Salary</a><a href="#how">How it works</a><span class="pill">Post Job</span></nav></div></header>
 
-<header>
-  <div class="container nav">
-    <a class="brand" href="#">
-      <div class="brand-mark">▣</div>
-      <div>CareerPath<small>Your Career Starts Here</small></div>
-    </a>
-    <nav class="menu">
-      <a href="#home">Home</a><a href="#jobs">Jobs</a><a href="#features">Employers</a>
-      <a href="#contact">Why Us</a><a href="#contact">Contact Us</a>
-    </nav>
-    <a href="#jobs" class="nav-btn">Find Your Dream Job</a>
-  </div>
-</header>
+<section class="hero"><div class="wrap">
+<h1>Find your next job faster</h1><p>Search thousands of opportunities from trusted employers across America.</p>
+<div class="search"><div class="field">⌕ &nbsp; Job title, keyword, or company</div><div class="field">⌖ &nbsp; City, state, or ZIP code</div><button onclick="document.getElementById('jobs').scrollIntoView()">Search jobs</button></div>
+<div class="chips"><span>Remote</span><span>Part-time</span><span>Full-time</span><span>Entry level</span><span>Hiring now</span></div>
+</div></section>
 
-<main>
-<section class="hero" id="home">
-  <div class="container hero-grid">
-    <div>
-      <span class="pill">YOUR CAREER STARTS HERE</span>
-      <h1>Find Your Next Great <span>Opportunity</span></h1>
-      <p>Explore verified job opportunities from top companies across the USA. Your next career move starts with a single click.</p>
-      <div class="hero-actions">
-        <a href="#jobs" class="primary">Explore Jobs →</a>
-        <a href="#features" class="secondary">◉ How It Works</a>
-      </div>
-      <div class="mini-points">
-        <div>✓ Verified <b>Trusted job listings</b></div>
-        <div>✓ Top Employers <b>Leading companies</b></div>
-        <div>✓ Apply Easily <b>Simple application process</b></div>
-      </div>
-    </div>
-    <div class="hero-photo" aria-label="Professional job interview"></div>
-  </div>
-</section>
+<section class="section" id="categories"><div class="wrap"><div class="eyebrow">EXPLORE OPPORTUNITIES</div><h2>Browse jobs by category</h2><p class="sub">Find the right role in the industry that fits your skills and goals.</p><div class="grid6" id="cats"></div></div></section>
 
-<section class="jobs" id="jobs">
-  <div class="container">
-    <div class="section-kicker">TOP COMPANIES HIRING NOW</div>
-    <h2 class="section-title">Explore Job Opportunities</h2>
+<section class="section alt" id="jobs"><div class="wrap"><div class="eyebrow">LATEST OPPORTUNITIES</div><h2>Fresh openings hiring now</h2><p class="sub">Popular roles from employers looking for talented people today.</p><div class="jobgrid" id="jobsGrid"></div><div class="more"><a href="#jobs">View all jobs →</a></div></div></section>
 
-    <!-- Replace YOUR LINK 1 through YOUR LINK 6 with your real offer URLs -->
-    <div class="jobs-grid">
-      <article class="job">
-        <div class="job-top"><div class="job-logo amazon">a</div><span class="badge">HIRING</span></div>
-        <h3>Amazon Jobs</h3>
-        <div class="meta">⌖ <b>Warehouse, Delivery</b></div>
-        <div class="meta">◷ <b>Full & Part Time</b></div>
-        <div class="meta">💵 <b>$18–$35/hr</b></div>
-        <a class="primary" href="https://www.pinterest.com/search/videos/?q=satisfaction&rs=content_type_filter&filter_location=1" target="_blank" rel="noopener noreferrer">View Jobs →</a>
-      </article>
+<section class="section"><div class="wrap"><div class="eyebrow">EARN WHAT YOU DESERVE</div><h2>Competitive salaries across industries</h2><p class="sub">Explore common pay ranges for in-demand positions.</p><div class="paygrid"><div class="pay"><strong>$18–25</strong><b>Entry level</b><span>per hour</span></div><div class="pay"><strong>$25–35</strong><b>Skilled roles</b><span>per hour</span></div><div class="pay"><strong>$40–60k</strong><b>Professional</b><span>annual</span></div><div class="pay"><strong>$60k+</strong><b>Experienced</b><span>annual</span></div><div class="pay"><strong>$100k+</strong><b>Specialized</b><span>annual</span></div></div></div></section>
 
-      <article class="job">
-        <div class="job-top"><div class="job-logo walmart">W<i>✦</i>M</div><span class="badge">HIRING</span></div>
-        <h3>Walmart Jobs</h3>
-        <div class="meta">⌖ <b>Retail, Logistics</b></div>
-        <div class="meta">◷ <b>Full & Part Time</b></div>
-        <div class="meta">💵 <b>$15–$30/hr</b></div>
-        <a class="primary" href="YOUR LINK 2" target="_blank" rel="noopener noreferrer">View Jobs →</a>
-      </article>
+<section class="section dark"><div class="wrap"><div class="eyebrow">SIMPLE JOB SEARCH</div><h2>Job search made easier</h2><p class="sub">Everything you need to discover your next opportunity.</p><div class="featuregrid"><div class="feature"><div class="ico">⌕</div><b>Search jobs</b><p>Find relevant openings with simple filters.</p></div><div class="feature"><div class="ico">▣</div><b>Choose a position</b><p>Review details and compare opportunities.</p></div><div class="feature"><div class="ico">✓</div><b>Select information</b><p>See important job and employer details.</p></div><div class="feature"><div class="ico">↗</div><b>Apply in minutes</b><p>Move from discovery to application quickly.</p></div></div></div></section>
 
-      <article class="job">
-        <div class="job-top"><div class="job-logo">WM</div><span class="badge">HIRING</span></div>
-        <h3>Waste Management</h3>
-        <div class="meta">⌖ <b>Drivers, Operations</b></div>
-        <div class="meta">◷ <b>Full Time</b></div>
-        <div class="meta">💵 <b>$20–$38/hr</b></div>
-        <a class="primary" href="YOUR LINK 3" target="_blank" rel="noopener noreferrer">View Jobs →</a>
-      </article>
+<section class="section" id="how"><div class="wrap"><div class="eyebrow">GET STARTED</div><h2>How it works</h2><p class="sub">A straightforward way to discover opportunities.</p><div class="steps"><div class="step"><div class="num">1</div><b>Search for a job</b><p>Enter a title, skill, company, or location to start exploring.</p></div><div class="step"><div class="num">2</div><b>Explore opportunities</b><p>Browse job details, salary information, and requirements.</p></div><div class="step"><div class="num">3</div><b>Apply with confidence</b><p>Choose the role that fits you and follow the employer's application process.</p></div></div></div></section>
 
-      <article class="job">
-        <div class="job-top"><div class="job-logo ups">UPS</div><span class="badge">HIRING</span></div>
-        <h3>UPS Jobs</h3>
-        <div class="meta">⌖ <b>Package Handler, Driver</b></div>
-        <div class="meta">◷ <b>Full & Part Time</b></div>
-        <div class="meta">💵 <b>$18–$35/hr</b></div>
-        <a class="primary" href="YOUR LINK 4" target="_blank" rel="noopener noreferrer">View Jobs →</a>
-      </article>
+<section class="section alt"><div class="wrap"><div class="stats"><div><strong>500,000+</strong><span>Weekly listings</span></div><div><strong>50,000+</strong><span>Active employers</span></div><div><strong>5,000+</strong><span>New jobs daily</span></div><div><strong>98%</strong><span>Happy users</span></div></div></div></section>
 
-      <article class="job">
-        <div class="job-top"><div class="job-logo kelly">KELLY</div><span class="badge">HIRING</span></div>
-        <h3>Kelly Services</h3>
-        <div class="meta">⌖ <b>Office, Remote</b></div>
-        <div class="meta">◷ <b>Full & Part Time</b></div>
-        <div class="meta">💵 <b>$17–$40/hr</b></div>
-        <a class="primary" href="YOUR LINK 5" target="_blank" rel="noopener noreferrer">View Jobs →</a>
-      </article>
+<section class="section"><div class="wrap"><div class="eyebrow">REAL EXPERIENCES</div><h2>Loved by workers across America</h2><p class="sub">See what job seekers have to say about their experience.</p><div class="reviews"><div class="review"><div class="person"><span class="avatar">JD</span> Jordan D.</div><div class="stars">★★★★★</div><p>“I found several relevant openings in minutes. The search was simple and easy to use.”</p></div><div class="review"><div class="person"><span class="avatar">MS</span> Maya S.</div><div class="stars">★★★★★</div><p>“The job categories made it much easier to narrow down what I actually wanted.”</p></div><div class="review"><div class="person"><span class="avatar">TP</span> Taylor P.</div><div class="stars">★★★★★</div><p>“A clean way to discover new opportunities without wasting time.”</p></div></div></div></section>
 
-      <article class="job">
-        <div class="job-top"><div class="job-logo delta">✈ DELTA</div><span class="badge">HIRING</span></div>
-        <h3>Airline Jobs</h3>
-        <div class="meta">⌖ <b>Airport, Customer Service</b></div>
-        <div class="meta">◷ <b>Full & Part Time</b></div>
-        <div class="meta">💵 <b>$18–$42/hr</b></div>
-        <a class="primary" href="YOUR LINK 6" target="_blank" rel="noopener noreferrer">View Jobs →</a>
-      </article>
-    </div>
-  </div>
-</section>
+<section class="section alt"><div class="wrap"><div class="eyebrow">HELP CENTER</div><h2>Common questions, answered</h2><p class="sub">Quick answers to common questions about searching for jobs.</p><div class="faq"><details><summary>How does the job search work?</summary><p>Use the search fields or browse categories to discover available opportunities.</p></details><details><summary>How can I search by salary?</summary><p>Use salary information shown on listings to compare opportunities and find roles that match your expectations.</p></details><details><summary>Are the jobs available across the US?</summary><p>Yes. Listings can include opportunities from employers in many locations across the United States.</p></details><details><summary>Can I apply directly?</summary><p>Each listing provides a clear next step so you can continue through the employer's application process.</p></details><details><summary>Are there remote opportunities?</summary><p>Remote and flexible opportunities may be available depending on the current listings.</p></details></div></div></section>
 
-<section class="features" id="features">
-  <div class="container">
-    <div class="feature-box">
-      <div class="section-kicker" style="color:#78b0ff">WHY CHOOSE CAREERPATH?</div>
-      <h2 class="section-title">We Make Job Search Simple & Easy</h2>
-      <div class="feature-grid">
-        <div class="feature"><div class="icon">▣</div><h4>Wide Opportunities</h4><p>Thousands of opportunities from trusted employers.</p></div>
-        <div class="feature"><div class="icon">✓</div><h4>Verified & Trusted</h4><p>Job listings are carefully selected for quality.</p></div>
-        <div class="feature"><div class="icon">⌖</div><h4>Jobs All Across USA</h4><p>Find positions near you and across the country.</p></div>
-        <div class="feature"><div class="icon">●</div><h4>Job Alerts</h4><p>Discover new opportunities and apply quickly.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
+<section class="cta"><div class="wrap"><h2>Ready to find your <span>next job?</span></h2><p>Start exploring fresh opportunities and take the next step in your career.</p><a href="#jobs">Find jobs today →</a><a class="alt" href="#categories">Browse job types</a></div></section>
 
-<section class="stats">
-  <div class="container stats-grid">
-    <div class="stat"><div class="stat-icon">▣</div><div><strong>50k+</strong><span>Job Listings</span></div></div>
-    <div class="stat"><div class="stat-icon">♟</div><div><strong>1000+</strong><span>Top Employers</span></div></div>
-    <div class="stat"><div class="stat-icon">⌖</div><div><strong>50+</strong><span>States</span></div></div>
-    <div class="stat"><div class="stat-icon">♙</div><div><strong>500k+</strong><span>Job Seekers</span></div></div>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="container contact-grid">
-    <div>
-      <h2>Contact Us</h2>
-      <p class="contact-sub">Have questions? We'd love to hear from you.</p>
-      <form onsubmit="sendMessage(event)">
-        <input required placeholder="Your Name">
-        <input required type="email" placeholder="Your Email">
-        <input placeholder="Phone Number">
-        <input placeholder="Subject">
-        <textarea required placeholder="Your Message"></textarea>
-        <button class="primary" type="submit">Send Message →</button>
-      </form>
-    </div>
-    <aside class="contact-card">
-      <h3>Get In Touch</h3>
-      <div class="contact-line">✉ <span><b>Email</b>support@careerpath.example</span></div>
-      <div class="contact-line">☎ <span><b>Phone</b>+1 (800) 555-0199</span></div>
-      <div class="contact-line">⌖ <span><b>Location</b>United States</span></div>
-    </aside>
-  </div>
-</section>
-</main>
-
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="brand"><div class="brand-mark">▣</div><div>CareerPath<small>Your Career Starts Here</small></div></div>
-        <p>Connecting job seekers with great career opportunities from trusted employers.</p>
-      </div>
-      <div><h4>Job Links</h4><a href="#jobs">Amazon Jobs</a><a href="#jobs">Walmart Jobs</a><a href="#jobs">UPS Jobs</a><a href="#jobs">Airline Jobs</a></div>
-      <div><h4>Support</h4><a href="#contact">Contact Us</a><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="#">FAQ</a></div>
-      <div><h4>For Employers</h4><a href="#">Post a Job</a><a href="#">Employer Login</a><a href="#">Pricing</a><a href="#">Resources</a></div>
-      <div><h4>Newsletter</h4><p style="font-size:10px;color:#9eacc1">Get new job opportunities by email.</p><div class="newsletter"><input type="email" placeholder="Your email"><button onclick="subscribe()">→</button></div></div>
-    </div>
-    <div class="copyright">© 2026 CareerPath. All rights reserved. This website is for demonstration purposes.</div>
-  </div>
-</footer>
+<footer><div class="wrap"><div class="brand" style="justify-content:center;color:#344054;margin-bottom:9px"><span class="brandmark">✓</span> US Job Search</div><div class="footnav"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Contact</a><a href="#">About</a></div>© 2026 US Job Search. All rights reserved.</div></footer>
 
 <script>
-function sendMessage(e){
-  e.preventDefault();
-  alert("Thanks! Your message has been submitted.");
-  e.target.reset();
-}
-function subscribe(){
-  const input=document.querySelector(".newsletter input");
-  if(!input.value){alert("Please enter your email.");return;}
-  alert("You're subscribed!");
-  input.value="";
-}
+const colors=['#dfe9ff','#fff0df','#e2f7ee','#fde6ef','#efe4ff','#e4f4fb'];
+const cats=[
+['Healthcare','HC'],['Retail','RT'],['Education','ED'],['Nursing','NU'],['IT & Tech','IT'],['Customer Service','CS'],
+['Hospitality','HO'],['Construction','CO'],['Transportation','TR'],['Finance','FI'],['Sales','SA'],['Marketing','MK'],
+['Administrative','AD'],['Warehouse','WH'],['Manufacturing','MF'],['Security','SE'],['Food Service','FS'],['Cleaning','CL'],
+['Remote Jobs','RE'],['Part-time','PT'],['Delivery Driver','DV'],['Office Jobs','OF'],['Customer Support','CU'],['Warehouse Associate','WA'],
+['Engineering','EN'],['Skilled Trades','ST'],['Accounting','AC'],['Insurance','IN'],['Human Resources','HR'],['Legal','LG']
+];
+document.getElementById('cats').innerHTML=cats.map((c,i)=>`<div class="cat"><div class="ico" style="background:${colors[i%colors.length]};color:#52606f">${c[1]}</div><b>${c[0]}</b><small>${(120+i*37).toLocaleString()} jobs</small></div>`).join('');
+
+const jobs=[
+['Warehouse Associate','Amazon Logistics','$19–$24/hr','Dallas, TX','Full-time'],['Customer Service Rep.','Bright Support','$20–$27/hr','Remote','Full-time'],['Office Assistant','Northstar Group','$22–$29/hr','Chicago, IL','Full-time'],
+['Delivery Driver','QuickShip','$21–$30/hr','Phoenix, AZ','Part-time'],['Retail Associate','Market Place','$18–$23/hr','Atlanta, GA','Part-time'],['Security Officer','SafeGuard','$22–$28/hr','Houston, TX','Full-time'],
+['Medical Assistant','CarePoint','$24–$31/hr','Miami, FL','Full-time'],['Sales Representative','Growth Co.','$25–$38/hr','Denver, CO','Full-time'],['Data Entry Clerk','United Services','$20–$26/hr','Remote','Part-time'],
+['Production Worker','Prime Manufacturing','$21–$29/hr','Detroit, MI','Full-time'],['Administrative Assistant','BluePeak','$23–$30/hr','New York, NY','Full-time'],['Truck Driver','RoadLink','$28–$40/hr','Columbus, OH','Full-time'],
+['Nursing Assistant','HealthFirst','$25–$34/hr','Boston, MA','Full-time'],['Store Manager','Retail United','$42–$58k/yr','Orlando, FL','Full-time'],['IT Support Specialist','TechCore','$32–$45/hr','Austin, TX','Full-time'],
+['Receptionist','City Offices','$19–$25/hr','Charlotte, NC','Full-time'],['Kitchen Staff','Fresh Table','$18–$24/hr','Los Angeles, CA','Part-time'],['Account Coordinator','Summit Inc.','$48–$62k/yr','Seattle, WA','Full-time']
+];
+document.getElementById('jobsGrid').innerHTML=jobs.map((j,i)=>`<article class="job"><div class="jobhead"><div class="jico">${j[0].split(' ').map(x=>x[0]).slice(0,2).join('')}</div><span class="new">${i%4===0?'New':'Hiring'}</span></div><h3>${j[0]}</h3><div class="co">${j[1]}</div><div class="meta">⌖ ${j[3]} &nbsp; • &nbsp; ${j[4]}</div><div class="salary">${j[2]}</div><a class="apply" href="YOUR LINK" target="_blank" rel="noopener">YOUR LINK</a></article>`).join('');
 </script>
 </body>
 </html>

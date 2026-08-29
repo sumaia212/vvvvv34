@@ -1,322 +1,347 @@
-<p style="text-align: center;">&nbsp;<span style="font-size: 64px; text-align: center;"><b>1</b></span><span style="color: #212121; font-family: Lato; font-size: 24pt; font-variant: normal; text-align: center; vertical-align: baseline; white-space: pre-wrap;"> </span><span style="color: #212121; font-family: Lato; font-size: 24pt; font-variant: normal; text-align: center; vertical-align: baseline; white-space: pre-wrap;"> </span><span style="color: red; font-family: Lato; font-variant: normal; text-align: center; text-decoration-skip-ink: none; vertical-align: baseline; white-space: pre-wrap;"><span style="font-size: 24pt;">videos
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CareerPath — Find Your Next Great Opportunity</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --blue:#1264e8;
+    --blue2:#0d55cc;
+    --dark:#10284d;
+    --text:#172033;
+    --muted:#667085;
+    --light:#f7faff;
+    --line:#e5eaf2;
+    --green:#19a66a;
+  }
+  body{
+    font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+    color:var(--text);background:#fff;line-height:1.5;
+  }
+  a{text-decoration:none;color:inherit}
+  .container{width:min(1120px,92%);margin:auto}
 
-</span><b style="color: black; font-family: &quot;Times New Roman&quot;; font-size: 64px; white-space: normal;"><b><!--POST PREVIEW IMAGE (First image of post will be used as FB preview)-->
-<!--Video Thumbnail + Click Redirect-->
-</b></b></span></p><div style="margin: auto; max-width: 720px;"><span style="color: red; font-family: Lato; font-variant: normal; text-align: center; text-decoration-skip-ink: none; vertical-align: baseline; white-space: pre-wrap;"><b style="color: black; font-family: &quot;Times New Roman&quot;; font-size: 64px; white-space: normal;"><b>
+  /* Header */
+  header{height:76px;border-bottom:1px solid #edf0f5;background:#fff;position:sticky;top:0;z-index:50}
+  .nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:25px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:#26364e}
+  .brand-mark{
+    width:42px;height:42px;border-radius:10px;background:var(--blue);
+    display:grid;place-items:center;color:#fff;font-weight:900;font-size:21px;
+    box-shadow:0 7px 18px rgba(18,100,232,.2)
+  }
+  .brand span small{display:block;font-size:10px;color:#8994a6;font-weight:600;letter-spacing:.2px;margin-top:-4px}
+  .menu{display:flex;align-items:center;gap:32px;margin-left:auto;margin-right:35px}
+  .menu a{font-size:13px;color:#475467;font-weight:600}
+  .menu a:hover{color:var(--blue)}
+  .nav-btn,.primary{
+    background:var(--blue);color:white;border:0;border-radius:6px;padding:12px 22px;
+    font-weight:700;font-size:13px;cursor:pointer;display:inline-block;
+    box-shadow:0 7px 18px rgba(18,100,232,.18)
+  }
+  .nav-btn:hover,.primary:hover{background:var(--blue2)}
 
-  <!--CONFIG-->
-  <script>
-    var adLink = "https://chatgpt.com/";  // <-- এখানে Adsterra Direct Link বসাও
-    var videoLink = "https://files.catbox.moe/znmjaj.mp4";  // <-- ভিডিও লিংক
-  </script>
+  /* Hero */
+  .hero{padding:58px 0 35px;background:linear-gradient(180deg,#fff,#f9fbff)}
+  .hero-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center}
+  .pill{display:inline-flex;background:#eaf3ff;color:var(--blue);font-size:11px;font-weight:800;padding:6px 12px;border-radius:20px;margin-bottom:17px}
+  h1{font-size:48px;line-height:1.08;letter-spacing:-1.8px;margin-bottom:18px}
+  h1 span{color:var(--blue)}
+  .hero p{font-size:15px;color:var(--muted);max-width:500px;margin-bottom:25px}
+  .hero-actions{display:flex;align-items:center;gap:18px}
+  .secondary{padding:11px 19px;border:1px solid #dfe5ee;border-radius:6px;color:#344054;font-size:13px;font-weight:700;background:white}
+  .secondary:hover{border-color:var(--blue);color:var(--blue)}
+  .mini-points{display:flex;gap:28px;margin-top:31px}
+  .mini-points div{font-size:11px;color:#475467;font-weight:700}
+  .mini-points b{display:block;font-size:10px;color:#98a2b3;font-weight:500;margin-top:2px}
+  .hero-photo{
+    min-height:340px;border-radius:9px;overflow:hidden;
+    background:
+      linear-gradient(90deg,rgba(255,255,255,.03),rgba(255,255,255,.03)),
+      url("https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1100&q=85") center/cover;
+    box-shadow:0 18px 45px rgba(16,40,77,.12);
+  }
 
-  <!--STYLE-->
-  <style>
-    .video-box{
-      position:relative;
-      width:100%;
-      cursor:pointer;
-      border-radius:12px;
-      overflow:hidden;
-      display:block;
-    }
-    .video-box img{
-      width:100%;
-      height:auto;
-      display:block;
-      border-radius:12px;
-    }
-    .play-btn{
-      position:absolute;
-      top:50%;
-      left:50%;
-      transform:translate(-50%, -50%);
-      width:80px;
-      height:80px;
-      background:rgba(0,0,0,0.6);
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      box-shadow:0 6px 18px rgba(0,0,0,0.35);
-    }
-    .play-btn:after{
-      content:"";
-      margin-left:4px;
-      border-style:solid;
-      border-width:15px 0 15px 25px;
-      border-color:transparent transparent transparent white;
-    }
-    .overlay-gradient{
-      position:absolute;
-      left:0; right:0; bottom:0; top:0;
-      background:linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.55));
-    }
-  </style>
+  /* Jobs */
+  .jobs{padding:22px 0 35px}
+  .section-kicker{text-align:center;color:var(--blue);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px}
+  .section-title{text-align:center;font-size:23px;line-height:1.2;margin:3px 0 24px}
+  .jobs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+  .job{
+    border:1px solid var(--line);border-radius:8px;background:#fff;padding:18px;
+    box-shadow:0 5px 18px rgba(16,24,40,.035);transition:.2s;
+  }
+  .job:hover{transform:translateY(-3px);box-shadow:0 13px 28px rgba(16,24,40,.08)}
+  .job-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+  .job-logo{
+    height:58px;min-width:92px;padding:6px 10px;border-radius:6px;background:#fafafa;
+    display:flex;align-items:center;justify-content:center;font-weight:900;font-size:23px;
+    letter-spacing:-1px;
+  }
+  .amazon{font-family:Georgia,serif;font-size:27px;color:#111}
+  .walmart{color:#08783d;font-size:18px}.walmart i{color:#f3b500;font-style:normal}
+  .ups{background:#4a280c;color:#ffcc3d;font-size:21px;border-radius:9px}
+  .kelly{color:#147b50;font-size:19px}
+  .delta{color:#d92c32;font-size:17px}
+  .fedex{font-size:20px;color:#4b2683}.fedex i{color:#ff6d00;font-style:normal}
+  .badge{background:#e9f8ef;color:#15945a;padding:4px 8px;border-radius:20px;font-size:9px;font-weight:800}
+  .job h3{font-size:15px;margin-bottom:9px}
+  .meta{font-size:11px;color:#7a8494;margin:7px 0;display:flex;gap:7px;align-items:center}
+  .meta b{color:#4d5a6d;font-weight:700}
+  .job .primary{width:100%;text-align:center;margin-top:13px;padding:10px;font-size:12px}
 
-  <!--THUMBNAIL + PLAY BUTTON-->
-  <div class="video-box" onclick="openRedirect();">
-    <!--নিচে src এর মধ্যে সরাসরি লিংক বসিয়ে দেওয়া হয়েছে-->
-    <img alt="Play Video" id="thumb" src="https://blogger.googleusercontent.com/img/a/AVvXsEijqbA3CH_q1fCokt7o-9fWKp9Kh_ZC4PjTiBMDj896qDjbZq4DTWW9GMI-WuiyLyTtTsOHygswqUqS8jTekp5_TvzHWNBMxExLQ0k6_iZ6R11PUdu_26juMmYOvIzZZDMpSs3QL60q2a2DLAPsX9GQfNA2a2eiY9Ch1iWNSQULzz2JnpPPKIFoPwx_" />
-    <div class="overlay-gradient"></div>
-    <div class="play-btn"></div>
+  /* Blue feature strip */
+  .features{padding:5px 0 42px}
+  .feature-box{
+    background:var(--dark);border-radius:8px;color:white;padding:27px 30px;
+    box-shadow:0 14px 32px rgba(16,40,77,.16)
+  }
+  .feature-box .section-title{color:white;margin-bottom:24px}
+  .feature-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+  .feature{padding:0 23px;text-align:center;border-right:1px solid rgba(255,255,255,.14)}
+  .feature:last-child{border:0}
+  .icon{width:43px;height:43px;border-radius:50%;background:#1e58aa;display:grid;place-items:center;margin:0 auto 10px;font-size:18px}
+  .feature h4{font-size:12px;margin-bottom:5px}
+  .feature p{font-size:10px;line-height:1.5;color:#aebbd0}
+
+  /* Stats */
+  .stats{padding:3px 0 38px}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}
+  .stat{display:flex;align-items:center;gap:10px}
+  .stat-icon{color:var(--blue);font-size:23px}
+  .stat strong{display:block;color:var(--blue);font-size:16px;line-height:1.1}
+  .stat span{font-size:10px;color:#7b8798}
+
+  /* Contact */
+  .contact{padding:6px 0 45px}
+  .contact-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:42px;align-items:start}
+  .contact h2{text-align:center;font-size:22px;margin-bottom:4px}
+  .contact-sub{text-align:center;color:#8993a2;font-size:10px;margin-bottom:22px}
+  form{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+  input,textarea{
+    width:100%;border:1px solid #e0e5ed;border-radius:5px;padding:11px 12px;
+    outline:none;font:inherit;font-size:11px;color:#344054;background:white
+  }
+  textarea{min-height:95px;resize:vertical;grid-column:1/-1}
+  input:focus,textarea:focus{border-color:#8bb5ff;box-shadow:0 0 0 3px #edf4ff}
+  form .primary{grid-column:1/-1;width:max-content;margin:auto}
+  .contact-card{
+    background:linear-gradient(135deg,#1768ed,#0750cb);color:white;border-radius:8px;padding:22px;
+    box-shadow:0 13px 30px rgba(18,100,232,.22)
+  }
+  .contact-card h3{font-size:15px;margin-bottom:15px}
+  .contact-line{display:flex;gap:11px;margin:12px 0;font-size:10px;line-height:1.45}
+  .contact-line b{display:block;font-size:11px}
+
+  /* Footer */
+  footer{background:#0e2548;color:#fff;padding:31px 0 15px}
+  .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1.2fr;gap:30px}
+  .footer-brand p{font-size:10px;color:#9eacc1;max-width:240px;margin-top:11px}
+  footer h4{font-size:11px;margin-bottom:10px}
+  footer a{display:block;color:#9eacc1;font-size:10px;margin:6px 0}
+  .newsletter{display:flex;margin-top:8px}
+  .newsletter input{border-radius:4px 0 0 4px;border:0;padding:9px}
+  .newsletter button{border:0;background:var(--blue);color:#fff;padding:0 13px;border-radius:0 4px 4px 0;font-weight:700}
+  .copyright{border-top:1px solid rgba(255,255,255,.1);margin-top:25px;padding-top:12px;color:#8797ad;font-size:9px;text-align:center}
+
+  @media(max-width:850px){
+    .menu{display:none}.hero-grid{grid-template-columns:1fr}.hero-photo{min-height:300px}
+    h1{font-size:40px}.jobs-grid{grid-template-columns:1fr 1fr}.feature-grid{grid-template-columns:1fr 1fr;gap:22px}
+    .feature:nth-child(2){border-right:0}.feature:nth-child(-n+2){padding-bottom:20px}
+    .stats-grid{grid-template-columns:1fr 1fr}.contact-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:560px){
+    header{height:65px}.brand-mark{width:36px;height:36px}.nav-btn{padding:9px 13px}
+    .hero{padding-top:38px}.hero-grid{gap:28px}h1{font-size:35px}
+    .mini-points{gap:14px;flex-wrap:wrap}.jobs-grid{grid-template-columns:1fr}
+    .feature-grid{grid-template-columns:1fr}.feature{border-right:0!important;border-bottom:1px solid rgba(255,255,255,.14);padding:15px 5px!important}
+    .feature:last-child{border-bottom:0}.stats-grid{grid-template-columns:1fr 1fr;gap:18px}
+    form{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.hero-actions{flex-wrap:wrap}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#">
+      <div class="brand-mark">▣</div>
+      <div>CareerPath<small>Your Career Starts Here</small></div>
+    </a>
+    <nav class="menu">
+      <a href="#home">Home</a><a href="#jobs">Jobs</a><a href="#features">Employers</a>
+      <a href="#contact">Why Us</a><a href="#contact">Contact Us</a>
+    </nav>
+    <a href="#jobs" class="nav-btn">Find Your Dream Job</a>
   </div>
+</header>
 
-  <!--SCRIPT-->
-  <script>
-    function openRedirect(){
-      window.open(adLink, "_blank");
-      setTimeout(function(){
-        window.location.href = videoLink;
-      }, 900);
-    }
-  </script>
-
-</b></b></span></div><span style="color: red; font-family: Lato; font-variant: normal; text-align: center; text-decoration-skip-ink: none; vertical-align: baseline; white-space: pre-wrap;"><b style="color: black; font-family: &quot;Times New Roman&quot;; font-size: 64px; white-space: normal;"><b>
-
-<!--EXTRA IMAGE for Facebook Preview-->
-<div style="display: none;">
-  <!--এখানে প্রিভিউ ইমেজের লিংক দিন যদি আলাদা প্রিভিউ চান-->
-  <img alt="FB Preview" src="https://blogger.googleusercontent.com/img/a/AVvXsEijqbA3CH_q1fCokt7o-9fWKp9Kh_ZC4PjTiBMDj896qDjbZq4DTWW9GMI-WuiyLyTtTsOHygswqUqS8jTekp5_TvzHWNBMxExLQ0k6_iZ6R11PUdu_26juMmYOvIzZZDMpSs3QL60q2a2DLAPsX9GQfNA2a2eiY9Ch1iWNSQULzz2JnpPPKIFoPwx_" />
-</div></b><br /></b><span style="font-size: 24pt;">
-<div style="text-align: center;"><span style="color: black; font-family: &quot;Times New Roman&quot;; font-size: medium; white-space: normal;">&nbsp;</span><span style="color: black; font-family: &quot;Times New Roman&quot;; font-size: 64px; white-space: normal;"><b>2</b></span><span style="color: #212121; font-size: 24pt; font-variant: normal; vertical-align: baseline;"> </span><span style="color: #212121; font-size: 24pt; font-variant: normal; vertical-align: baseline;"> </span><span style="font-variant: normal; text-decoration-skip-ink: none; vertical-align: baseline;"><span style="font-size: 24pt;">videos</span></span></div></span><span style="font-variant: normal; text-decoration-skip-ink: none; vertical-align: baseline;"><span style="font-size: 24pt;">
-</span><b style="color: black; font-family: &quot;Times New Roman&quot;; font-size: 64px; white-space: normal;"><!--POST PREVIEW IMAGE (First image of post will be used as FB preview)-->
-<!--Video Thumbnail + Click Redirect-->
-<div style="margin: auto; max-width: 720px;">
-
-  <!--CONFIG-->
-  <script>
-    var adLink = "https://chatgpt.com/";  // <-- এখানে Adsterra Direct Link বসাও
-    var videoLink = "https://files.catbox.moe/znmjaj.mp4";  // <-- ভিডিও লিংক
-  </script>
-
-  <!--STYLE-->
-  <style>
-    .video-box{
-      position:relative;
-      width:100%;
-      cursor:pointer;
-      border-radius:12px;
-      overflow:hidden;
-      display:block;
-    }
-    .video-box img{
-      width:100%;
-      height:auto;
-      display:block;
-      border-radius:12px;
-    }
-    .play-btn{
-      position:absolute;
-      top:50%;
-      left:50%;
-      transform:translate(-50%, -50%);
-      width:80px;
-      height:80px;
-      background:rgba(0,0,0,0.6);
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      box-shadow:0 6px 18px rgba(0,0,0,0.35);
-    }
-    .play-btn:after{
-      content:"";
-      margin-left:4px;
-      border-style:solid;
-      border-width:15px 0 15px 25px;
-      border-color:transparent transparent transparent white;
-    }
-    .overlay-gradient{
-      position:absolute;
-      left:0; right:0; bottom:0; top:0;
-      background:linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.55));
-    }
-  </style>
-
-  <!--THUMBNAIL + PLAY BUTTON-->
-  <div class="video-box" onclick="openRedirect();">
-    <!--নিচে src এর মধ্যে সরাসরি লিংক বসিয়ে দেওয়া হয়েছে-->
-    <img alt="Play Video" id="thumb" src="https://blogger.googleusercontent.com/img/a/AVvXsEiTzuVAxcVK5I4Wyr4f3fCj7eONX9Hh2Ob3fzzHVQq4OqYVT1gfjnfv1DvVSHNa28Pu9Kxkwu09riN3we301Zhwa5sxpUeojpk5_37OgfxvqWgIseFcC0eBz2Dga8u8GVPQ5CQ2nAWz2-15fTSSuZpICVMmI7Ozc7BDO5W54Tp2i_pYzrz87vd7nWWn" />
-    <div class="overlay-gradient"></div>
-    <div class="play-btn"></div>
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <span class="pill">YOUR CAREER STARTS HERE</span>
+      <h1>Find Your Next Great <span>Opportunity</span></h1>
+      <p>Explore verified job opportunities from top companies across the USA. Your next career move starts with a single click.</p>
+      <div class="hero-actions">
+        <a href="#jobs" class="primary">Explore Jobs →</a>
+        <a href="#features" class="secondary">◉ How It Works</a>
+      </div>
+      <div class="mini-points">
+        <div>✓ Verified <b>Trusted job listings</b></div>
+        <div>✓ Top Employers <b>Leading companies</b></div>
+        <div>✓ Apply Easily <b>Simple application process</b></div>
+      </div>
+    </div>
+    <div class="hero-photo" aria-label="Professional job interview"></div>
   </div>
+</section>
 
-  <!--SCRIPT-->
-  <script>
-    function openRedirect(){
-      window.open(adLink, "_blank");
-      setTimeout(function(){
-        window.location.href = videoLink;
-      }, 900);
-    }
-  </script>
+<section class="jobs" id="jobs">
+  <div class="container">
+    <div class="section-kicker">TOP COMPANIES HIRING NOW</div>
+    <h2 class="section-title">Explore Job Opportunities</h2>
 
-</div>
+    <div class="jobs-grid">
+      <article class="job">
+        <div class="job-top"><div class="job-logo amazon">a</div><span class="badge">HIRING</span></div>
+        <h3>Amazon Jobs</h3>
+        <div class="meta">⌖ <b>Warehouse, Delivery</b></div>
+        <div class="meta">◷ <b>Full & Part Time</b></div>
+        <div class="meta">💵 <b>$18–$35/hr</b></div>
+        <a class="primary" href="#" onclick="apply('Amazon Jobs')">View Jobs →</a>
+      </article>
 
-<!--EXTRA IMAGE for Facebook Preview-->
-<div style="display: none;">
-  <!--এখানে প্রিভিউ ইমেজের লিংক দিন যদি আলাদা প্রিভিউ চান-->
-  <img alt="FB Preview" src="https://blogger.googleusercontent.com/img/a/AVvXsEiTzuVAxcVK5I4Wyr4f3fCj7eONX9Hh2Ob3fzzHVQq4OqYVT1gfjnfv1DvVSHNa28Pu9Kxkwu09riN3we301Zhwa5sxpUeojpk5_37OgfxvqWgIseFcC0eBz2Dga8u8GVPQ5CQ2nAWz2-15fTSSuZpICVMmI7Ozc7BDO5W54Tp2i_pYzrz87vd7nWWn" />
-</div><br /></b><span style="font-size: 24pt;">
-<div style="text-align: center;"><span style="color: black; font-family: &quot;Times New Roman&quot;; font-size: medium; white-space: normal;">&nbsp;</span><span style="color: black; font-family: &quot;Times New Roman&quot;; font-size: 64px; white-space: normal;"><b>3</b></span><span style="color: #212121; font-size: 24pt; font-variant: normal; vertical-align: baseline;"> </span><span style="color: #212121; font-size: 24pt; font-variant: normal; vertical-align: baseline;"> </span><span style="font-variant: normal; text-decoration-skip-ink: none; vertical-align: baseline;"><span style="font-size: 24pt;">videos</span></span></div></span><span style="font-variant: normal; text-decoration-skip-ink: none; vertical-align: baseline;"><span style="font-size: 24pt;">
-<div style="text-align: center;"><b style="color: black; font-family: &quot;Times New Roman&quot;; font-size: 64px; white-space: normal;"><!--POST PREVIEW IMAGE (First image of post will be used as FB preview)-->
-<!--Video Thumbnail + Click Redirect-->
-<div style="margin: auto; max-width: 720px;">
+      <article class="job">
+        <div class="job-top"><div class="job-logo walmart">W<i>✦</i>M</div><span class="badge">HIRING</span></div>
+        <h3>Walmart Jobs</h3>
+        <div class="meta">⌖ <b>Retail, Logistics</b></div>
+        <div class="meta">◷ <b>Full & Part Time</b></div>
+        <div class="meta">💵 <b>$15–$30/hr</b></div>
+        <a class="primary" href="#" onclick="apply('Walmart Jobs')">View Jobs →</a>
+      </article>
 
-  <!--CONFIG-->
-  <script>
-    var adLink = "https://chatgpt.com/";  // <-- এখানে Adsterra Direct Link বসাও
-    var videoLink = "https://files.catbox.moe/znmjaj.mp4";  // <-- ভিডিও লিংক
-  </script>
+      <article class="job">
+        <div class="job-top"><div class="job-logo">WM</div><span class="badge">HIRING</span></div>
+        <h3>Waste Management</h3>
+        <div class="meta">⌖ <b>Drivers, Operations</b></div>
+        <div class="meta">◷ <b>Full Time</b></div>
+        <div class="meta">💵 <b>$20–$38/hr</b></div>
+        <a class="primary" href="#" onclick="apply('Waste Management Jobs')">View Jobs →</a>
+      </article>
 
-  <!--STYLE-->
-  <style>
-    .video-box{
-      position:relative;
-      width:100%;
-      cursor:pointer;
-      border-radius:12px;
-      overflow:hidden;
-      display:block;
-    }
-    .video-box img{
-      width:100%;
-      height:auto;
-      display:block;
-      border-radius:12px;
-    }
-    .play-btn{
-      position:absolute;
-      top:50%;
-      left:50%;
-      transform:translate(-50%, -50%);
-      width:80px;
-      height:80px;
-      background:rgba(0,0,0,0.6);
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      box-shadow:0 6px 18px rgba(0,0,0,0.35);
-    }
-    .play-btn:after{
-      content:"";
-      margin-left:4px;
-      border-style:solid;
-      border-width:15px 0 15px 25px;
-      border-color:transparent transparent transparent white;
-    }
-    .overlay-gradient{
-      position:absolute;
-      left:0; right:0; bottom:0; top:0;
-      background:linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.55));
-    }
-  </style>
+      <article class="job">
+        <div class="job-top"><div class="job-logo ups">UPS</div><span class="badge">HIRING</span></div>
+        <h3>UPS Jobs</h3>
+        <div class="meta">⌖ <b>Package Handler, Driver</b></div>
+        <div class="meta">◷ <b>Full & Part Time</b></div>
+        <div class="meta">💵 <b>$18–$35/hr</b></div>
+        <a class="primary" href="#" onclick="apply('UPS Jobs')">View Jobs →</a>
+      </article>
 
-  <!--THUMBNAIL + PLAY BUTTON-->
-  <div class="video-box" onclick="openRedirect();">
-    <!--নিচে src এর মধ্যে সরাসরি লিংক বসিয়ে দেওয়া হয়েছে-->
-    <img alt="Play Video" id="thumb" src="https://blogger.googleusercontent.com/img/a/AVvXsEjq_iZ9Wtju526tOpjj9VTA-S8kkyuKkYYJp9A9ARwFrLZTHHf1LiK4Z0lB2h5m18HdvgVoNzpylv_9w9yqYxiUisa4X1zwCHohUu6IGA9enlg8xIvBn0gvPDh3eAqJczfIfQ_MdVFbP13UlrGMyYoHabkjFEL-WTcABW4WfVuV_ErP9ksxEBq2b8PF" />
-    <div class="overlay-gradient"></div>
-    <div class="play-btn"></div>
+      <article class="job">
+        <div class="job-top"><div class="job-logo kelly">KELLY</div><span class="badge">HIRING</span></div>
+        <h3>Kelly Services</h3>
+        <div class="meta">⌖ <b>Office, Remote</b></div>
+        <div class="meta">◷ <b>Full & Part Time</b></div>
+        <div class="meta">💵 <b>$17–$40/hr</b></div>
+        <a class="primary" href="#" onclick="apply('Kelly Services Jobs')">View Jobs →</a>
+      </article>
+
+      <article class="job">
+        <div class="job-top"><div class="job-logo delta">✈ DELTA</div><span class="badge">HIRING</span></div>
+        <h3>Airline Jobs</h3>
+        <div class="meta">⌖ <b>Airport, Customer Service</b></div>
+        <div class="meta">◷ <b>Full & Part Time</b></div>
+        <div class="meta">💵 <b>$18–$42/hr</b></div>
+        <a class="primary" href="#" onclick="apply('Airline Jobs')">View Jobs →</a>
+      </article>
+    </div>
   </div>
+</section>
 
-  <!--SCRIPT-->
-  <script>
-    function openRedirect(){
-      window.open(adLink, "_blank");
-      setTimeout(function(){
-        window.location.href = videoLink;
-      }, 900);
-    }
-  </script>
-
-</div>
-
-<!--EXTRA IMAGE for Facebook Preview-->
-<div style="display: none;">
-  <!--এখানে প্রিভিউ ইমেজের লিংক দিন যদি আলাদা প্রিভিউ চান-->
-  <img alt="FB Preview" src="https://blogger.googleusercontent.com/img/a/AVvXsEjq_iZ9Wtju526tOpjj9VTA-S8kkyuKkYYJp9A9ARwFrLZTHHf1LiK4Z0lB2h5m18HdvgVoNzpylv_9w9yqYxiUisa4X1zwCHohUu6IGA9enlg8xIvBn0gvPDh3eAqJczfIfQ_MdVFbP13UlrGMyYoHabkjFEL-WTcABW4WfVuV_ErP9ksxEBq2b8PF" />
-</div></b></div></span><span style="font-size: 24pt;">
-<div style="text-align: center;"><span style="color: black; font-family: &quot;Times New Roman&quot;; font-size: medium; white-space: normal;">&nbsp;</span><span style="color: black; font-family: &quot;Times New Roman&quot;; font-size: 64px; white-space: normal;"><b>4</b></span><span style="color: #212121; font-size: 24pt; font-variant: normal; vertical-align: baseline;"> </span><span style="color: #212121; font-size: 24pt; font-variant: normal; vertical-align: baseline;"> </span><span style="font-variant: normal; text-decoration-skip-ink: none; vertical-align: baseline;"><span style="font-size: 24pt;">videos</span></span></div></span><span style="font-variant: normal; text-decoration-skip-ink: none; vertical-align: baseline;"><span style="font-size: 24pt;">
-<div style="text-align: center;"><b style="color: black; font-family: &quot;Times New Roman&quot;; font-size: 64px; white-space: normal;"><!--POST PREVIEW IMAGE (First image of post will be used as FB preview)-->
-<!--Video Thumbnail + Click Redirect-->
-<div style="margin: auto; max-width: 720px;">
-
-  <!--CONFIG-->
-  <script>
-    var adLink = "https://chatgpt.com/";  // <-- এখানে Adsterra Direct Link বসাও
-    var videoLink = "https://files.catbox.moe/znmjaj.mp4";  // <-- ভিডিও লিংক
-  </script>
-
-  <!--STYLE-->
-  <style>
-    .video-box{
-      position:relative;
-      width:100%;
-      cursor:pointer;
-      border-radius:12px;
-      overflow:hidden;
-      display:block;
-    }
-    .video-box img{
-      width:100%;
-      height:auto;
-      display:block;
-      border-radius:12px;
-    }
-    .play-btn{
-      position:absolute;
-      top:50%;
-      left:50%;
-      transform:translate(-50%, -50%);
-      width:80px;
-      height:80px;
-      background:rgba(0,0,0,0.6);
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      box-shadow:0 6px 18px rgba(0,0,0,0.35);
-    }
-    .play-btn:after{
-      content:"";
-      margin-left:4px;
-      border-style:solid;
-      border-width:15px 0 15px 25px;
-      border-color:transparent transparent transparent white;
-    }
-    .overlay-gradient{
-      position:absolute;
-      left:0; right:0; bottom:0; top:0;
-      background:linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.55));
-    }
-  </style>
-
-  <!--THUMBNAIL + PLAY BUTTON-->
-  <div class="video-box" onclick="openRedirect();">
-    <!--নিচে src এর মধ্যে সরাসরি লিংক বসিয়ে দেওয়া হয়েছে-->
-    <img alt="Play Video" id="thumb" src="https://blogger.googleusercontent.com/img/a/AVvXsEgB3XIC-gTBG6T4Xr-GLNqmIGq1JhUMhGhPEEX2-gkuzULdsYy8GOrmB3iLGZY6_7gF2hLsVjtnb3f3BlMPK4-hj_Zg0-ThKltXzM5NEGES1xLzDRuNgUsRGGSJyYgjszEqof3gkBwY76jTaixDTiZHp3Zl410hwrf0dJzWKlfSvj85v0wJUHQYtKJO" />
-    <div class="overlay-gradient"></div>
-    <div class="play-btn"></div>
+<section class="features" id="features">
+  <div class="container">
+    <div class="feature-box">
+      <div class="section-kicker" style="color:#78b0ff">WHY CHOOSE CAREERPATH?</div>
+      <h2 class="section-title">We Make Job Search Simple & Easy</h2>
+      <div class="feature-grid">
+        <div class="feature"><div class="icon">▣</div><h4>Wide Opportunities</h4><p>Thousands of opportunities from trusted employers.</p></div>
+        <div class="feature"><div class="icon">✓</div><h4>Verified & Trusted</h4><p>Job listings are carefully selected for quality.</p></div>
+        <div class="feature"><div class="icon">⌖</div><h4>Jobs All Across USA</h4><p>Find positions near you and across the country.</p></div>
+        <div class="feature"><div class="icon">●</div><h4>Job Alerts</h4><p>Discover new opportunities and apply quickly.</p></div>
+      </div>
+    </div>
   </div>
+</section>
 
-  <!--SCRIPT-->
-  <script>
-    function openRedirect(){
-      window.open(adLink, "_blank");
-      setTimeout(function(){
-        window.location.href = videoLink;
-      }, 900);
-    }
-  </script>
+<section class="stats">
+  <div class="container stats-grid">
+    <div class="stat"><div class="stat-icon">▣</div><div><strong>50k+</strong><span>Job Listings</span></div></div>
+    <div class="stat"><div class="stat-icon">♟</div><div><strong>1000+</strong><span>Top Employers</span></div></div>
+    <div class="stat"><div class="stat-icon">⌖</div><div><strong>50+</strong><span>States</span></div></div>
+    <div class="stat"><div class="stat-icon">♙</div><div><strong>500k+</strong><span>Job Seekers</span></div></div>
+  </div>
+</section>
 
-</div>
+<section class="contact" id="contact">
+  <div class="container contact-grid">
+    <div>
+      <h2>Contact Us</h2>
+      <p class="contact-sub">Have questions? We'd love to hear from you.</p>
+      <form onsubmit="sendMessage(event)">
+        <input required placeholder="Your Name">
+        <input required type="email" placeholder="Your Email">
+        <input placeholder="Phone Number">
+        <input placeholder="Subject">
+        <textarea required placeholder="Your Message"></textarea>
+        <button class="primary" type="submit">Send Message →</button>
+      </form>
+    </div>
+    <aside class="contact-card">
+      <h3>Get In Touch</h3>
+      <div class="contact-line">✉ <span><b>Email</b>support@careerpath.example</span></div>
+      <div class="contact-line">☎ <span><b>Phone</b>+1 (800) 555-0199</span></div>
+      <div class="contact-line">⌖ <span><b>Location</b>United States</span></div>
+    </aside>
+  </div>
+</section>
+</main>
 
-<!--EXTRA IMAGE for Facebook Preview-->
-<div style="display: none;">
-  <!--এখানে প্রিভিউ ইমেজের লিংক দিন যদি আলাদা প্রিভিউ চান-->
-  <img alt="FB Preview" src="https://blogger.googleusercontent.com/img/a/AVvXsEgB3XIC-gTBG6T4Xr-GLNqmIGq1JhUMhGhPEEX2-gkuzULdsYy8GOrmB3iLGZY6_7gF2hLsVjtnb3f3BlMPK4-hj_Zg0-ThKltXzM5NEGES1xLzDRuNgUsRGGSJyYgjszEqof3gkBwY76jTaixDTiZHp3Zl410hwrf0dJzWKlfSvj85v0wJUHQYtKJO" />
-</div></b></div></span><span style="font-size: 24pt;">
-<div style="text-align: center;"><span style="color: black; font-family: &quot;Times New Roman&quot;; font-size: medium; white-space: normal;">&nbsp;</span><span style="color: black; font-family: &quot;Times New Roman&quot;; font-size: 64px; white-space: normal;"><b>5</b></span><span style="color: #212121; font-size: 24pt; font-variant: normal; vertical-align: baseline;"> </span><span style="color: #212121; font-size: 24pt; font-variant: normal; vertical-align: baseline;"> </span><span style="font-size: 24pt; font-variant: normal; text-decoration-skip-ink: none; vertical-align: baseline;">videos</span></div></span></span></span></span></span><p></p><div id="gtx-trans" style="left: 191px; position: absolute; top: 1476.23px;"><div class="gtx-trans-icon"></div></div>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand"><div class="brand-mark">▣</div><div>CareerPath<small>Your Career Starts Here</small></div></div>
+        <p>Connecting job seekers with great career opportunities from trusted employers.</p>
+      </div>
+      <div><h4>Job Links</h4><a href="#jobs">Amazon Jobs</a><a href="#jobs">Walmart Jobs</a><a href="#jobs">UPS Jobs</a><a href="#jobs">Airline Jobs</a></div>
+      <div><h4>Support</h4><a href="#contact">Contact Us</a><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="#">FAQ</a></div>
+      <div><h4>For Employers</h4><a href="#">Post a Job</a><a href="#">Employer Login</a><a href="#">Pricing</a><a href="#">Resources</a></div>
+      <div><h4>Newsletter</h4><p style="font-size:10px;color:#9eacc1">Get new job opportunities by email.</p><div class="newsletter"><input type="email" placeholder="Your email"><button onclick="subscribe()">→</button></div></div>
+    </div>
+    <div class="copyright">© 2026 CareerPath. All rights reserved. This website is for demonstration purposes.</div>
+  </div>
+</footer>
+
+<script>
+function apply(job){
+  event.preventDefault();
+  alert("Opening application for " + job + ". Replace this link with your CPA/affiliate URL.");
+}
+function sendMessage(e){
+  e.preventDefault();
+  alert("Thanks! Your message has been submitted.");
+  e.target.reset();
+}
+function subscribe(){
+  const input=document.querySelector(".newsletter input");
+  if(!input.value){alert("Please enter your email.");return;}
+  alert("You're subscribed!");
+  input.value="";
+}
+</script>
+</body>
+</html>
